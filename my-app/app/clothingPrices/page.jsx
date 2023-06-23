@@ -1,5 +1,5 @@
 "use client"
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Card } from "../components/Card";
 import { useObserverApi } from "../helpers/observerApi";
 import { useClothes } from "../libs/context";
@@ -17,7 +17,7 @@ function ClothingPrices () {
         }
 
         return () => newObserver?.disconnect()
-    }, [store.clothes])
+    }, [store.clothes, store.isStopPagination])
     
     return (
         <LayoutClothingPage>
